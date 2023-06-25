@@ -53,3 +53,16 @@ int _printf(const char *format, ...)
 	return (printed_chars);
 }
 
+/**
+ *print_buffer - If the buffer exists, print its contents.
+ *@buffer: character arrays
+ *@buff_ind: Index to add next char
+ */
+
+void print_buffer(char buffer[], int *buff_ind)
+{
+	if (*buff_ind > 0)
+		write(1, &buffer[0], *buff_ind);
+
+	*buff_ind = 0;
+}
