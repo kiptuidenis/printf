@@ -53,7 +53,6 @@ int find_specifier(const char *format, int format_index, specifier *printer
 			return (specifier_index);
 		}
 	}
-		
 	return (-1);
 }
 
