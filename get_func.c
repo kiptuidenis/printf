@@ -3,7 +3,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
 /**
  *print_string - prints strings, and (null) if string = NULL
  *@args: string to be printed
@@ -54,8 +53,8 @@ int find_specifier(const char *format, int format_index, specifier *printer
 			return (specifier_index);
 		}
 	}
-
-	return (-1);
+	if (specifier_index == specifier_size && format[format_index +1] != ' ')
+		return (-1);
 }
 
 /**
