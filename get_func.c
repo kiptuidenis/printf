@@ -54,7 +54,7 @@ int find_specifier(const char *format, int format_index, specifier *printer
 		}
 	}
 		
-	return (-1)
+	return (-1);
 }
 
 /**
