@@ -53,8 +53,8 @@ int find_specifier(const char *format, int format_index, specifier *printer
 			return (specifier_index);
 		}
 	}
-	if (specifier_index == specifier_size && format[format_index +1] != ' ')
-		return (-1);
+		
+	return (-1)
 }
 
 /**
