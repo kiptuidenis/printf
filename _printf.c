@@ -1,6 +1,6 @@
 #include "main.h"
 
-void print_buffer(char buffer[], int *buff_ind);
+void print_buffer(char buffer[], int *buff_pos);
 
 /**
  * _printf - emulates the functionality of the printf function.
@@ -11,7 +11,7 @@ void print_buffer(char buffer[], int *buff_ind);
 int _printf(const char *format, ...)
 {
 	int i, printed = 0, printed_chars = 0;
-	int flags, width, precision, size, buff_ind = 0;
+	int flaglist, findwidth, myprecision, thesize, buff_pos = 0;
 	va_list list;
 	char buffer[BUFF_SIZE];
 
@@ -24,45 +24,44 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] != '%')
 		{
-			buffer[buff_ind++] = format[i];
-			if (buff_ind == BUFF_SIZE)
-				print_buffer(buffer, &buff_ind);
-
+			buffer[buff_pos++] = format[i];
+			if (buff_pos == BUFF_SIZE)
+				print_buffer(buffer, &buff_pos);
 			printed_chars++;
 		}
 		else
 		{
-			print_buffer(buffer, &buff_ind);
-			flags = get_flags(format, &i);
-			width = get_width(format, &i, list);
-			precision = get_precision(format, &i, list);
-			size = get_size(format, &i);
+			print_buffer(buffer, &buff_pos);
+			flaglist = get_flaglist(format, &i);
+			findwidth = get_findwidth(format, &i, list);
+			myprecision = get_myprecision(format, &i, list);
+			thesize = get_thesize(format, &i);
 			++i;
-			printed = handle_print(format, &i, list, buffer,
-				flags, width, precision, size);
+			printed = handles_print(format, &i, list, buffer,
+				flaglist, findwidth, myprecision, thesize);
 			if (printed == -1)
 				return (-1);
 			printed_chars += printed;
 		}
 	}
 
-	print_buffer(buffer, &buff_ind);
+	print_buffer(buffer, &buff_pos);
 
 	va_end(list);
 
 	return (printed_chars);
 }
-
 /**
- *print_buffer - If the buffer exists, print its contents.
- *@buffer: character arrays
- *@buff_ind: Index to add next char
+ * print_buffer - prototype, monitors buffer contents
+ * and uses the write system to print them if buff_pos > 0
+ * @buffer: character array
+ * @buff_pos: position to add next char.
  */
-
-void print_buffer(char buffer[], int *buff_ind)
+void print_buffer(char buffer[], int *buff_pos)
 {
-	if (*buff_ind > 0)
-		write(1, &buffer[0], *buff_ind);
+	if (*buff_pos > 0)
+		write(1, &buffer[0], *buff_pos);
 
-	*buff_ind = 0;
+	*buff_pos = 0;
 }
+
