@@ -85,11 +85,14 @@ int handle_specifier(const char *format, int format_index,
 	}
 	else
 	{
-		charPrinted = handle_normal_character(format, format_index);
-		charPrinted += handle_normal_character(format, format_index + 1);
-
-		return (charPrinted);
+		if (format[format_index + 1] != '\0')
+		{
+			charPrinted = handle_normal_character(format, format_index);
+			charPrinted += handle_normal_character(format, format_index + 1);
+			return (charPrinted);
+		}
 	}
+	return (-1);
 }
 
 /**
