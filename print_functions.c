@@ -86,15 +86,12 @@ int print_integer(va_list args)
 	return (n);
 }
 
-
-
 /**
- *print_char - prints characters
- *@args: character to be printed
+ * print_char - prints characters
+ * @args: character to be printed
  *
- *Return: 1
+ * Return: 1
  */
-
 int print_char(va_list args)
 {
 	char character;
@@ -106,12 +103,11 @@ int print_char(va_list args)
 }
 
 /**
- *print_percent - handles the % specifier
- *@args: % specifier
+ * print_percent - handles the % specifier
+ * @args: % specifier
  *
- *Return: 1
+ * Return: 1
  */
-
 int print_percent(va_list args)
 {
 	(void)args;
@@ -119,3 +115,4 @@ int print_percent(va_list args)
 
 	return (1);
 }
+
