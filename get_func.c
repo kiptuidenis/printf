@@ -110,8 +110,8 @@ int handle_normal_character(const char *format, int format_index)
 }
 
 /**
- *get_func - gets the required print function depending on specifier
- *@format: pointer to the format string. Specifies how the output
+ *get_func - use specifier to select the correct print function
+ *@format: format string pointer. States how the output
  *should be printed
  *@args: arguments to be printed
  *
@@ -124,8 +124,8 @@ int get_func(const char *format, va_list args)
 		{"c", print_char},
 		{"s", print_string},
 		{"%", print_percent},
-		{"d", print_integer},
-		{"i", print_integer}
+		{"i", print_integer},
+		{"d", print_integer}
 	};
 	int printed_chars = 0;
 	int format_index = 0;

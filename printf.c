@@ -3,8 +3,8 @@
 #include <stdio.h>
 
 /**
- *_printf - prints formatted string
- *@format: format string
+ *_printf - prints the string that is formatted
+ *@format: format specifier
  *
  *Return: Number of printed characters
  */
