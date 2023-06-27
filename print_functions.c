@@ -87,7 +87,7 @@ int print_integer(va_list args)
 }
 
 /**
- * print_char - prints characters
+ * print_char - function to print characters
  * @args: character to be printed
  *
  * Return: 1
@@ -103,7 +103,7 @@ int print_char(va_list args)
 }
 
 /**
- * print_percent - handles the % specifier
+ * print_percent - for the % specifier
  * @args: % specifier
  *
  * Return: 1
