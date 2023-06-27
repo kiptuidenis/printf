@@ -121,8 +121,8 @@ int handle_normal_character(const char *format, int format_index)
 int get_func(const char *format, va_list args)
 {
 	specifier printer[] = {
-		{"c", print_char},
 		{"s", print_string},
+		{"c", print_char},
 		{"%", print_percent},
 		{"i", print_integer},
 		{"d", print_integer}
