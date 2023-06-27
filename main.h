@@ -5,8 +5,8 @@
 
 /**
  * struct Specifier - specifier structure
- * @specifier: specifier
- * @funcs: print functions
+ * @specifier: specifies
+ * @funcs: function printer
  */
 typedef struct Specifier
 {
