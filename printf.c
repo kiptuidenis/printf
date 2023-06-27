@@ -6,7 +6,7 @@
  *_printf - prints the string that is formatted
  *@format: format specifier
  *
- *Return: Number of printed characters
+ *Return: Number of characters that have been printed
  */
 
 int _printf(const char *format, ...)
