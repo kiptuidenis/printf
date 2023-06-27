@@ -19,8 +19,8 @@ The function can only handle the following conversion specifiers
 ## Limitations
 1. Does not replicate the buffer handling of the C library printf function
 2. Does not handle the flag characters
-3. Does not have to handle field width
-4. Does not have to handle precision
-5. Does not have to handle the length modifiers
+3. Does not handle field width
+4. Does not handle precision
+5. Does not handle the length modifiers
 
-Written with love by Eric and Denis.
+_Written with love by Eric and Denis._
